@@ -1,26 +1,25 @@
-<div>
-  <h1>ChatGPT Text Editor</h1>
-  <p>Este es mi intento de un editor de texto ayudado por ChatGPT</p>
-</div>
-<div>
-  <span>Preguntale algo que te ayude a generar algún documento</span>
-  <div [formGroup]="formulario">
-    <input type="text" formControlName="pregunta">
+
+
+<div [formGroup]="formulario" class="container padre">
+  <h1 class="hijo">ChatGPT Text Editor</h1>
+  <h3 class="hijo">Este es mi intento de un editor de texto ayudado por ChatGPT</h3>
+  <div class="hijo">
+    <span>Preguntale algo que te ayude a generar algún documento</span>
+    <div class="hijo">
+      <input class="form-control" type="text" formControlName="pregunta">
+      <button type="button" class="btn btn-primary mt-3" (click)="preguntar()">Preguntar</button>
+    </div>
+    <div class="hijo">
+      <div>
+        <span>Aquí está tu respuesta: </span>
+      </div>
+      <div>
+        {{respuestaChatGPT}}
+      </div>
+    </div>
   </div>
-  <button (click)="preguntar()">Preguntar</button>
-</div>
-<div>
-  <span>Aquí está tu respuesta: </span>
-</div>
-<div>
-  {{respuestaChatGPT}}
-</div>
-<div [formGroup]="formulario">
-  <angular-editor formControlName="htmlContent" [config]="config"></angular-editor>
-</div>
-<br>
-<div>
-  <button (click)="exportarPDF()">Exportar</button>
+  <angular-editor class="mt-5" formControlName="htmlContent" [config]="config"></angular-editor>
+  <button type="button" class="btn btn-success hijo" (click)="exportarPDF()">Exportar</button>
 </div>
 
 <div class="container">

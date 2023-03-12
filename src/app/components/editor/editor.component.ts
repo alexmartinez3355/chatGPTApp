@@ -20,7 +20,7 @@ export class EditorComponent implements OnInit {
 
 
   configuration = new Configuration({
-    apiKey: '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',
+    apiKey: 'API-KEY',
   });
 
   formulario: FormGroup = new FormGroup({})
@@ -71,7 +71,7 @@ export class EditorComponent implements OnInit {
     })
 
     this.formulario.get('htmlContent').valueChanges.subscribe(resp => {
-      this.pdfTable.nativeElement.innerHTML = ''
+      /* this.pdfTable.nativeElement.innerHTML = '' */
     })
   }
 
@@ -80,15 +80,14 @@ export class EditorComponent implements OnInit {
     const pdfTable = this.pdfTable.nativeElement;
     pdfTable.innerHTML = maqueta;
     let html = htmlToPdfmake(pdfTable.innerHTML);
+    console.log(html);
     pdfTable.innerHTML = '';
     const documentDefinition = { content: html };
     pdfMake.createPdf(documentDefinition).open();
   }
 
   preguntar(){
-    /* console.log(this.formulario.get('pregunta').value); */
     let pregunta: string = this.formulario.get('pregunta').value;
-    console.log('pregunta: ', pregunta);
     this.chatgptService.obtenerRespuesta(pregunta).subscribe(resp => {
       this.respuestaChatGPT = resp['choices'][0].message.content;
     })

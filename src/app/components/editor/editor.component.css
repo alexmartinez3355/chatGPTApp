@@ -1,0 +1,9 @@
+.padre {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.hijo {
+  margin-top: 20px;
+}
