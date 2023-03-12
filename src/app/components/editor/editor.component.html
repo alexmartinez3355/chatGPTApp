@@ -1,0 +1,33 @@
+<div>
+  <h1>ChatGPT Text Editor</h1>
+  <p>Este es mi intento de un editor de texto ayudado por ChatGPT</p>
+</div>
+<div>
+  <span>Preguntale algo que te ayude a generar algún documento</span>
+  <div [formGroup]="formulario">
+    <input type="text" formControlName="pregunta">
+  </div>
+  <button (click)="preguntar()">Preguntar</button>
+</div>
+<div>
+  <span>Aquí está tu respuesta: </span>
+</div>
+<div>
+  {{respuestaChatGPT}}
+</div>
+<div [formGroup]="formulario">
+  <angular-editor formControlName="htmlContent" [config]="config"></angular-editor>
+</div>
+<br>
+<div>
+  <button (click)="exportarPDF()">Exportar</button>
+</div>
+
+<div class="container">
+  <div id="pdfTable" #pdfTable="" >
+    <div class="oculto">
+      {{formulario.get('htmlContent').value}}
+    </div>
+  </div>
+</div>
+

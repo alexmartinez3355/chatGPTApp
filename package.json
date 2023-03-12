@@ -18,6 +18,11 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@kolkov/angular-editor": "^2.1.0",
+    "html-to-pdfmake": "^2.4.16",
+    "jspdf": "^2.5.1",
+    "openai": "^3.2.1",
+    "pdfmake": "^0.2.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
