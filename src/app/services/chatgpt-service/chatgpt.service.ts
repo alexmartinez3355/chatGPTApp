@@ -7,7 +7,7 @@ export class ChatgptService {
 
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer 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'
+    'Authorization': 'Bearer API-KEY'
   })
 
   constructor(
